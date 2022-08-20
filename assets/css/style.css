@@ -1,0 +1,161 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;900&family=Roboto:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Buttons */
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Header */
+
+#headerBegin {
+    background-image: url(../img/header-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 59px;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 46px 100px 56px 100px;
+}
+
+.navList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 65px;
+    font-size: 22px;
+    color: #242323;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+a:visited {
+    color: #242323;
+}
+
+/* Cookie Banner */
+#cookieBanner {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+    justify-items: space-evenly;
+    background-color: #FBEDA3;
+    position: absolute;
+}
+
+#weUseCookies {
+    display: flex;
+    background-image: url(../assets/img/background_headline.svg);
+} 
+
+#cookieBtn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+#accept, #signUp {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#reject {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Sections shoes */
+
+#shoes {
+    display: flex;
+    /* flex-direction: row; */
+    /* background-color: red; */
+}
+
+.art {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.plus {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: #191919;
+    background-color: white;
+    border: none;
+}
+
+.name {
+    font-family: 'Poppins', sans-serif;
+    color: #191919;
+    font-size: 32px;
+}
+
+.priceAndArrow {
+    display: flex;
+    /* justify-content: space-between; */
+    background-color: red;
+}
+
+.price, .brand {
+    font-family: 'Poppins', sans-serif;
+    color: #7F7F7F;
+    font-size: 24px;
+}
+
+.img {
+    width: 20%;
+}
+
+/* Download Apps */
+
+#download {
+    display: flex;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    background-color: #000000;
+    color: #8E8E8E;
+}
+
+#cart {
+    display: flex;
+    justify-content: end;
+    background-color: #FBEDA3;
+}

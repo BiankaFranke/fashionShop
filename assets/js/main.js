@@ -89,4 +89,121 @@ const data = [
   }
  ]
  
- 
+ const cookieBanner = document.querySelector("#cookieBanner");
+ const navigation = document.querySelector("#navi");
+ const accept = document.querySelector("#accept");
+ const katShoes = document.querySelector('#katShoes');
+
+// Cookie Banner
+// Cookie check
+// if (document.cookie == "") {
+//     cookieBanner.style.display = "block";
+// } else {
+//     cookieBanner.style.display = "none";
+// };
+
+// Eventlistener for cookie banner
+
+// document.querySelector("#accept").addEventListener("click", (event) => {
+//     event.preventDefault();
+//     document.cookie = `acception=yes; Max-Age=1000000000; path=/`;
+//     cookieBanner.style.display = "none";
+// });
+
+// document.querySelector("#reject").addEventListener("click", (event) => {
+//     event.preventDefault();
+//     cookieBanner.style.display = "none";
+// });
+
+// Sections shoes
+
+data.forEach(item => {
+    const article = document.createElement("div");
+    const name = document.createElement("p");
+    const plus = document.createElement("button");
+
+    const image = document.createElement("img");
+
+    const priceAndArrow = document.createElement("div");
+
+    const price = document.createElement("p");
+    const arrow = document.createElement("p");
+
+    const arrowImg = document.createElement('img');
+
+    image.src = item.img;
+    image.classList.add("img");
+    katShoes.appendChild(image);
+
+    katShoes.appendChild(article);
+    article.classList.add("art");
+    name.innerText = item.name;
+    name.classList.add("name");
+
+    plus.innerText = '+';
+    plus.classList.add("plus");
+    article.appendChild(name);
+    article.appendChild(plus);
+
+    katShoes.appendChild(priceAndArrow);
+    priceAndArrow.classList.add("priceAndArrow");
+    price.classList.add("price");
+    price.innerText = item.price;
+
+    arrowImg.src = '../assets/img/arrow.svg';
+    arrowImg.classList.add("arr");
+
+    priceAndArrow.appendChild(price);
+    priceAndArrow.appendChild(arrowImg);
+
+    arrowImg.addEventListener('click', () => {
+        const accordionDiv = document.createElement("div");
+        const brand = document.createElement("p");
+        const choice = document.createElement("div");
+
+        arrowImg.style.transform = "rotate(180deg)"
+
+        brand.innerText = item.brand;
+        brand.classList.add("brand");
+        accordionDiv.appendChild(brand);
+
+        price.style.fontSize = '50px';
+
+        arrowImg.addEventListener('click', () => {
+            price.style.fontSize = '30px';
+        })
+    });
+
+    // item.sizes.forEach(element => {
+    //     const answerChoice = document.createElement('button');
+    //     answerChoice.innerText = element;
+    //     answer.appendChild(answerChoice);
+    //     choice.appendChild(answer);
+    // });
+
+    // plus.addEventListener('click', () => {
+
+    // });
+});
+
+let acc = () => {
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+    
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+};
+
