@@ -86,12 +86,12 @@ a {
 
 #headlineYellow {
     margin-top: 77px;
-    background-image: url(../img/background-main-headline-yellow.svg);
+    background-image: url(../img/background-main-headline-white.svg);
     background-repeat: no-repeat;
 }
 
 #headlineWhite {
-    background-image: url(../img/background-main-headline-white.svg);
+    background-image: url(../img/background-main-headline-yellow.svg);
     background-repeat: no-repeat;
 }
 
@@ -342,8 +342,8 @@ input[type='email'] {
     display: flex;
     position: fixed;
     right: 1px;
-    /* left: 85vw; */
     bottom: 50px;
+    opacity: 0.1;
 }
 
 #cart {
