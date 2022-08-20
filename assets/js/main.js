@@ -94,6 +94,7 @@ const data = [
  const accept = document.querySelector("#accept");
  const katShoes = document.querySelector('#katShoes');
  const send = document.querySelector('#send');
+ let counter = 0;
 
 // Cookie Banner
 // Cookie check
@@ -175,7 +176,6 @@ data.forEach(item => {
     arrowImg.addEventListener('click', () => {
         arrowImg.style.transform = "rotate(180deg)"
         arrowImg.style.transition = "all 0.5s";
-        // image.src = url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80');
         shoeTotal.appendChild(shoeSizes);
         articleTotal.appendChild(shoeTotal);
 
@@ -186,6 +186,18 @@ data.forEach(item => {
         })
     });
 });
+
+// Add article to shopping cart
+addToCart = document.querySelectorAll('.plus');
+let result = document.querySelector('#resultCart');
+
+addToCart.forEach(button => {
+    button.addEventListener('click', () => {
+        counter++;
+        result.innerText = counter;
+    })
+})
+
 
 send.addEventListener('click', (event) => {
     event.preventDefault();
@@ -205,3 +217,20 @@ send.addEventListener('click', (event) => {
     document.querySelector('#newsletter').appendChild(thankYou);
     document.querySelector('#newsletter').appendChild(reponse);
 });
+
+
+// ACCORDION FUNCTION
+// var accordion = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < accordion.length; i++) {
+//     accordion[i].addEventListener("click", function() {
+//       this.classList.toggle("active");
+//       var panel = this.nextElementSibling;
+//       if (panel.style.maxHeight) {
+//         panel.style.maxHeight = null;
+//       } else {
+//         panel.style.maxHeight = panel.scrollHeight + "px";
+//       }
+//     });
+//   }

@@ -353,8 +353,41 @@ footer {
     color: #8E8E8E;
 }
 
-#cart {
+.shoppingCart {
     display: flex;
     justify-content: end;
+    position: sticky;
+    /* top: 0; */
+    bottom: 0px;
+}
+
+#cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
     background-color: #FBEDA3;
+    margin-right: 60px;
+}
+
+#cart img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+#cartCounter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 59px;
+    height: 59px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    background-color: #E5C643;
+    transform: translate(35px, -15px);
 }
