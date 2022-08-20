@@ -47,6 +47,7 @@ li {
 
 a {
     text-decoration: none;
+    color: #242323;
 }
 
 /* Buttons */
@@ -338,7 +339,7 @@ input[type='email'] {
 }
 
 /* Shopping Cart */
-.shoppingCart {
+#shoppingCart {
     display: flex;
     position: fixed;
     right: 1px;

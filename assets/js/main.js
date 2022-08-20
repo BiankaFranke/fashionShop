@@ -94,6 +94,7 @@ const data = [
  const accept = document.querySelector("#accept");
  const katShoes = document.querySelector('#katShoes');
  const send = document.querySelector('#send');
+ let cartOp = document.querySelector('#shoppingCart');
  let counter = 0;
 
 // Cookie Banner
@@ -102,6 +103,7 @@ if (document.cookie == "") {
     cookieBanner.style.display = "block";
 } else {
     cookieBanner.style.display = "none";
+    cartOp.style.opacity = "1";
 };
 
 // Eventlistener for cookie banner
@@ -109,6 +111,7 @@ document.querySelector("#accept").addEventListener("click", (event) => {
     event.preventDefault();
     document.cookie = `acception=yes; Max-Age=1000000000; path=/`;
     cookieBanner.style.display = "none";
+    cartOp.style.opacity = "1";
 });
 
 document.querySelector("#reject").addEventListener("click", (event) => {
