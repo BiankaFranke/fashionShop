@@ -121,7 +121,7 @@ a {
 /* Navigation */
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 46px 100px 56px 100px;
 }
 .navList {
@@ -144,26 +144,28 @@ a:visited {
     background: rgba(251, 237, 163, 0.5);
     backdrop-filter: blur(15px);
     position: fixed;
+    top: 0;
     height: 100%;
     width: 100%;
+    display: flex;
 }
 
 #weUseCookies {
     display: flex;
     padding: 27px 100px 26px;
     align-items: center;
-    /* justify-items: space-between; */
+    justify-content: space-between;
     background-color: #FBEDA3;
 } 
 
 #cookieHeadline {
     background-position: right bottom;
-    background-image: url(../assets/img/background_headline.svg);
+    background-image: url(../img/background_headline.svg);
+    background-repeat: no-repeat;
 }
 
 #cookieBtn {
-    /* display: flex; */
-    justify-content: end;
+    display: flex;
     gap: 20px;
 }
 
