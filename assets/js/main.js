@@ -97,27 +97,25 @@ const data = [
 
 // Cookie Banner
 // Cookie check
-// if (document.cookie == "") {
-//     cookieBanner.style.display = "block";
-// } else {
-//     cookieBanner.style.display = "none";
-// };
+if (document.cookie == "") {
+    cookieBanner.style.display = "block";
+} else {
+    cookieBanner.style.display = "none";
+};
 
 // Eventlistener for cookie banner
+document.querySelector("#accept").addEventListener("click", (event) => {
+    event.preventDefault();
+    document.cookie = `acception=yes; Max-Age=1000000000; path=/`;
+    cookieBanner.style.display = "none";
+});
 
-// document.querySelector("#accept").addEventListener("click", (event) => {
-//     event.preventDefault();
-//     document.cookie = `acception=yes; Max-Age=1000000000; path=/`;
-//     cookieBanner.style.display = "none";
-// });
-
-// document.querySelector("#reject").addEventListener("click", (event) => {
-//     event.preventDefault();
-//     cookieBanner.style.display = "none";
-// });
+document.querySelector("#reject").addEventListener("click", (event) => {
+    event.preventDefault();
+    cookieBanner.style.display = "none";
+});
 
 // Sections shoes
-
 data.forEach(item => {
     const articleTotal = document.createElement("div");
     articleTotal.classList.add("articleTotal");
@@ -129,12 +127,15 @@ data.forEach(item => {
     const priceAndArrow = document.createElement("div");
     const price = document.createElement("p");
     const arrowImg = document.createElement('img');
-
+    const shoeTotal = document.createElement('div');
+    shoeTotal.classList.add("shoeTotal");
+    const shoeSizes = document.createElement('div');
+    shoeSizes.classList.add("shoeSizes");
+    const brand = document.createElement("p");
+    
     image.src = item.img;
     image.classList.add("img");
-    // katShoes.appendChild(image);
 
-    // katShoes.appendChild(article);
     article.classList.add("art");
     name.innerText = item.name;
     name.classList.add("name");
@@ -144,7 +145,6 @@ data.forEach(item => {
     article.appendChild(name);
     article.appendChild(plus);
 
-    // katShoes.appendChild(priceAndArrow);
     priceAndArrow.classList.add("priceAndArrow");
     price.classList.add("price");
     price.innerText = item.price;
@@ -161,49 +161,34 @@ data.forEach(item => {
 
     katShoes.appendChild(articleTotal);
 
-    arrowImg.addEventListener('click', () => {
-        const accordionDiv = document.createElement("div");
-        const brand = document.createElement("p");
-        const choice = document.createElement("div");
+    brand.innerText = item.brand;
+    brand.classList.add("brand");
+    shoeTotal.appendChild(brand);
 
+    item.sizes.forEach((element) => {
+        let sizes = document.createElement("p");
+        sizes.classList.add("sizes");
+        shoeSizes.appendChild(sizes);
+        sizes.innerText = element;
+    })
+
+    arrowImg.addEventListener('click', () => {
         arrowImg.style.transform = "rotate(180deg)"
         arrowImg.style.transition = "all 0.5s";
-
-        brand.innerText = item.brand;
-        brand.classList.add("brand");
-
-        item.sizes.forEach(element => {
-            const answerChoice = document.createElement('p');
-            answerChoice.innerText = 'bla';
-            answer.appendChild(answerChoice);
-            choice.appendChild(answer);
-        });
-
-        accordionDiv.appendChild(brand);
+        // image.src = url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80');
+        shoeTotal.appendChild(shoeSizes);
+        articleTotal.appendChild(shoeTotal);
 
         arrowImg.addEventListener('click', () => {
             arrowImg.style.transform = "rotate(0deg)"
             arrowImg.style.transition = "all 0.5s";
+            articleTotal.removeChild(shoeTotal);
         })
     });
 });
 
-
-
-
-let moveDown = () => {
-    arrowImg.style.transform = "rotate(180deg)"
-    arrowImg.style.transition = "all 0.5s";
-};
-
-let moveUP = () => {
-    arrowImg.style.transform = "rotate(0deg)"
-    arrowImg.style.transition = "all 0.5s";
-};
-
 send.addEventListener('click', (event) => {
     event.preventDefault();
-    const newNewsletter = document.createElement("div");
     const thankYou = document.createElement("p");
     const reponse = document.createElement("p");
     
@@ -216,9 +201,7 @@ send.addEventListener('click', (event) => {
     reponse.innerText = 'You will get our response shortly.'
     reponse.id = 'respondShortly';
     reponse.classList.add("newParagraph");
-    // reponse.style.margin('0px 0px 140px 0px');
 
     document.querySelector('#newsletter').appendChild(thankYou);
     document.querySelector('#newsletter').appendChild(reponse);
-
 });
