@@ -198,7 +198,6 @@ addToCart.forEach(button => {
     })
 })
 
-
 send.addEventListener('click', (event) => {
     event.preventDefault();
     const thankYou = document.createElement("p");
@@ -213,7 +212,6 @@ send.addEventListener('click', (event) => {
     reponse.innerText = 'You will get our response shortly.'
     reponse.id = 'respondShortly';
     reponse.classList.add("newParagraph");
-
     document.querySelector('#newsletter').appendChild(thankYou);
     document.querySelector('#newsletter').appendChild(reponse);
 });
