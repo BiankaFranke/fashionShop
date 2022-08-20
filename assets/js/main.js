@@ -93,6 +93,7 @@ const data = [
  const navigation = document.querySelector("#navi");
  const accept = document.querySelector("#accept");
  const katShoes = document.querySelector('#katShoes');
+ const send = document.querySelector('#send');
 
 // Cookie Banner
 // Cookie check
@@ -118,24 +119,22 @@ const data = [
 // Sections shoes
 
 data.forEach(item => {
+    const articleTotal = document.createElement("div");
+    articleTotal.classList.add("articleTotal");
+
     const article = document.createElement("div");
     const name = document.createElement("p");
     const plus = document.createElement("button");
-
     const image = document.createElement("img");
-
     const priceAndArrow = document.createElement("div");
-
     const price = document.createElement("p");
-    const arrow = document.createElement("p");
-
     const arrowImg = document.createElement('img');
 
     image.src = item.img;
     image.classList.add("img");
-    katShoes.appendChild(image);
+    // katShoes.appendChild(image);
 
-    katShoes.appendChild(article);
+    // katShoes.appendChild(article);
     article.classList.add("art");
     name.innerText = item.name;
     name.classList.add("name");
@@ -145,7 +144,7 @@ data.forEach(item => {
     article.appendChild(name);
     article.appendChild(plus);
 
-    katShoes.appendChild(priceAndArrow);
+    // katShoes.appendChild(priceAndArrow);
     priceAndArrow.classList.add("priceAndArrow");
     price.classList.add("price");
     price.innerText = item.price;
@@ -156,54 +155,70 @@ data.forEach(item => {
     priceAndArrow.appendChild(price);
     priceAndArrow.appendChild(arrowImg);
 
+    articleTotal.appendChild(image);
+    articleTotal.appendChild(article);
+    articleTotal.appendChild(priceAndArrow);
+
+    katShoes.appendChild(articleTotal);
+
     arrowImg.addEventListener('click', () => {
         const accordionDiv = document.createElement("div");
         const brand = document.createElement("p");
         const choice = document.createElement("div");
 
         arrowImg.style.transform = "rotate(180deg)"
+        arrowImg.style.transition = "all 0.5s";
 
         brand.innerText = item.brand;
         brand.classList.add("brand");
+
+        item.sizes.forEach(element => {
+            const answerChoice = document.createElement('p');
+            answerChoice.innerText = 'bla';
+            answer.appendChild(answerChoice);
+            choice.appendChild(answer);
+        });
+
         accordionDiv.appendChild(brand);
 
-        price.style.fontSize = '50px';
-
         arrowImg.addEventListener('click', () => {
-            price.style.fontSize = '30px';
+            arrowImg.style.transform = "rotate(0deg)"
+            arrowImg.style.transition = "all 0.5s";
         })
     });
-
-    // item.sizes.forEach(element => {
-    //     const answerChoice = document.createElement('button');
-    //     answerChoice.innerText = element;
-    //     answer.appendChild(answerChoice);
-    //     choice.appendChild(answer);
-    // });
-
-    // plus.addEventListener('click', () => {
-
-    // });
 });
 
-let acc = () => {
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-        this.classList.toggle("active");
-    
-        /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
+
+
+
+let moveDown = () => {
+    arrowImg.style.transform = "rotate(180deg)"
+    arrowImg.style.transition = "all 0.5s";
 };
 
+let moveUP = () => {
+    arrowImg.style.transform = "rotate(0deg)"
+    arrowImg.style.transition = "all 0.5s";
+};
+
+send.addEventListener('click', (event) => {
+    event.preventDefault();
+    const newNewsletter = document.createElement("div");
+    const thankYou = document.createElement("p");
+    const reponse = document.createElement("p");
+    
+    document.querySelector('#joinUs').remove();
+    document.querySelector('#tellEmail').remove();
+    document.querySelector('#newsletterForm').remove();
+
+    thankYou.innerText = 'Thank you!'
+    thankYou.classList.add("newHeadline");
+    reponse.innerText = 'You will get our response shortly.'
+    reponse.id = 'respondShortly';
+    reponse.classList.add("newParagraph");
+    // reponse.style.margin('0px 0px 140px 0px');
+
+    document.querySelector('#newsletter').appendChild(thankYou);
+    document.querySelector('#newsletter').appendChild(reponse);
+
+});

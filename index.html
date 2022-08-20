@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <section id="cookieBanner">
+      <div id="weUseCookies">
+        <h5>WE USE COOKIES</h5>
+        <img src="./assets/img/background_headline.svg" alt="yellow" />
+      </div>
+      <div id="cookieBtn">
+        <button class="btn" id="accept">Accept</button>
+        <button class="btn" id="reject">Reject all</button>
+      </div>
+    </section>
+
     <header>
-      <!-- <nav id="navi">
+      <nav id="navi">
         <div class="logo">
           <img src="./assets/img/logo.svg" alt="Fashion Logo" />
         </div>
@@ -24,39 +35,33 @@
         </div>
       </nav>
 
-      <section id="cookieBanner">
-        <div id="weUseCookies">
-          <h5>WE USE COOKIES</h5>
-          <img src="./assets/img/background_headline.svg" alt="yellow" />
-        </div>
-        <div id="cookieBtn">
-          <button class="btn" id="accept">Accept</button>
-          <button class="btn" id="reject">Reject all</button>
-        </div>
-      </section>
-
-      <section class="shoppingCart">
-        <div id="cart">
-          <img src="./assets/img/shopping-cart.svg" alt="Shooping Cart" />
-        </div>
-      </section>
-
       <section id="headerBegin">
-        <h1>Let's explore unique shoes.</h1>
-        <p>Live for Influential and Innovative fashion!</p>
-        <button class="btn">Shop now</button>
-      </section> -->
+        <div id="headline">
+          <div id="headlineYellow">
+            <p>Let's</p>
+          </div>
+          <p>explore</p>
+          <div id="headlineWhite">
+            <p>unique</p>
+          </div>
+          <p>shoes.</p>
+        </div>
+
+        <p class="headerDescription">
+          Live for Influential and Innovative fashion!
+        </p>
+        <button class="btn" id="shopNow">Shop now</button>
+      </section>
     </header>
 
     <main>
-      <h2>New Arrivals</h2>
-      <section id="shoes">
-        <div id="katShoes"></div>
-      </section>
+      <div id="newArrivals"><h2>New Arrivals</h2></div>
 
-      <!-- <section id="download">
+      <section id="katShoes"></section>
+
+      <section id="download">
         <div id="downloadDescription">
-          <h3>Download App & Get the Voucher</h3>
+          <h3>Download App & Get the Voucher!</h3>
           <p>
             Get 30% off for first transaction using Rondovision mobile app for
             now.
@@ -74,18 +79,22 @@
         <div id="iphone">
           <img src="./assets/img/app.png" alt="iPhone App" />
         </div>
-      </section> -->
+      </section>
 
-      <!-- <section id="newsletter">
-        <h4>JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO</h4>
-        <p>Type your email down below and be young wild generation</p>
-        <form>
+      <section id="newsletter">
+        <h4 class="newHeadline" id="joinUs">
+          JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO
+        </h4>
+        <p class="newParagraph" id="tellEmail">
+          Type your email down below and be young wild generation
+        </p>
+        <form id="newsletterForm">
           <input type="email" placeholder="Add your email here" />
-          <input type="submit" value="SEND" />
+          <input type="submit" value="SEND" id="send" />
         </form>
-      </section> -->
+      </section>
     </main>
-    <!-- <footer>
+    <footer>
       <section class="generalFooter">
         <h5>Fashion</h5>
         <p>Complete your style with awesome clothes from us.</p>
@@ -129,7 +138,13 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </section>
-    </footer> -->
+    </footer>
+
+    <section class="shoppingCart">
+      <div id="cart">
+        <img src="./assets/img/shopping-cart.svg" alt="Shooping Cart" />
+      </div>
+    </section>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
